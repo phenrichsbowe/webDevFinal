@@ -56,24 +56,6 @@
                 </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        <i class="bi bi-database"></i> Products
-                    </a>
-                    <ul class="dropdown-menu">
-                        @if (User?.Identity?.IsAuthenticated ?? false)
-                        {
-                            if (User.IsInRole("northwind-customer"))
-                            {
-                                <li><a class="dropdown-item" asp-controller="Customer" asp-action="Account"><i class="bi bi-person"></i> Account</a></li>
-                            }
-                            <li><a class="dropdown-item" asp-controller="Account" asp-action="Logout"><i class="bi bi-door-closed"></i> Sign Out</a></li>
-                        } else {
-                            <li><a class="dropdown-item" asp-controller="Customer" asp-action="Register"><i class="bi bi-person-add"></i> Register</a></li>
-                            <li><a class="dropdown-item" asp-controller="Account" asp-action="Login"><i class="bi bi-door-open"></i> Sign in</a></li>
-                        }
-                    </ul>
-                </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                         <i class="bi bi-database"></i> Employees
                     </a>
                     <ul class="dropdown-menu">
@@ -81,7 +63,7 @@
                         {
                             if (User.IsInRole("northwind-employee"))
                             {
-                                <li><a class="dropdown-item" asp-controller="Order" asp-action="Orders"><i class="bi bi-person"></i> Orders</a></li>
+                                <li><a class="dropdown-item" asp-controller="Employee" asp-action="Orders"><i class="bi bi-person"></i> Orders</a></li>
                             }
 
                             <li><a class="dropdown-item" asp-controller="Account" asp-action="Logout"><i class="bi bi-door-closed"></i> Sign Out</a></li>
@@ -97,7 +79,7 @@
                 }
                 else
                 {
-                    <a class="nav-link diflex" asp-controller="Account" asp-action="Login"><i class="bi bi-door-open"></i> Sign In</a>
+                    <a class="nav-link d-flex" asp-controller="Account" asp-action="Login"><i class="bi bi-door-open"></i> Sign In</a>
                 }
             </div>
         </div>
